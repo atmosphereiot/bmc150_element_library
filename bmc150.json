@@ -1,0 +1,134 @@
+{
+	"type": "Embedded Library",
+	"label": "BMC150 Driver",
+	"language": {
+		"en": {
+			"label": "BMC150 Driver"
+		}
+	},
+	"name": "bmc150",
+	"author": "Anaren Inc.",
+	"manufacturer":"Bosch Sensortec",
+	"description":"The BMC150 is an three-axis magnetic field and accelerometer in one package.",
+	"signature": "",
+	"version": "1.0.0",
+	
+	"links":{
+		"Datasheet":"https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMC150-DS000-04.pdf",
+		"Wiki Page":"https://"
+	},
+	
+	"code": {
+		"global" : "",
+		"setup" : "" 
+	},
+	
+	"elements": {
+		"xMagneticField": {
+			"label": "X Magnetic Field",
+			"language": {
+				"en": {
+					"label": "X Magnetic Field"
+				}
+			},
+			"returnType":"int",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		"yMagneticField": {
+			"label": "Y Magnetic Field",
+			"language": {
+				"en": {
+					"label": "Y Magnetic Field"
+				}
+			},
+			"returnType":"int",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		"zMagneticField": {
+			"label": "Z Magnetic Field",
+			"language": {
+				"en": {
+					"label": "Z Magnetic Field"
+				}
+			},
+			"returnType":"int",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},		
+		"magneticField": {
+			"label": "Magnetic Field",
+			"language": {
+				"en": {
+					"label": "Magnetic Field"
+				}
+			},
+			"returnType":"json",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		"xAccel": {
+			"label": "X Acceleration",
+			"language": {
+				"en": {
+					"label": "X Acceleration"
+				}
+			},
+			"returnType":"int",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		"yAccel": {
+			"label": "Y Acceleration",
+			"language": {
+				"en": {
+					"label": "Y Acceleration"
+				}
+			},
+			"returnType":"int",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		"zAccel": {
+			"label": "Z Acceleration",
+			"language": {
+				"en": {
+					"label": "Z Acceleration"
+				}
+			},
+			"returnType":"int",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		"acceleration": {
+			"label": "Acceleration",
+			"language": {
+				"en": {
+					"label": "Acceleration"
+				}
+			},
+			"returnType":"json",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		}
+	},
+	
+	"config":{
+	},
+	
+	"categories":["Sensor", "Acceleration", "Magnometer", "New"],
+	"links":{
+		"Product Page":"https://",
+		"Datasheet":"https://",
+		"Wiki Page":"https://"
+	}
+}
