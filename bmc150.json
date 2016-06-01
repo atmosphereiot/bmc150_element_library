@@ -140,7 +140,7 @@
 				"input":"Combo",
 				"prefix":"#define AIR_BMC150_MAG_PRESET BMC150_MAG_",
 				"options": ["POWER_ACTIVE", "PRESET_ENHANCED", "PRESET_LOW_POWER", "PRESET_REGULAR"],
-				"value":"BMC150_MAG_POWER_ACTIVE",
+				"value":"POWER_ACTIVE",
 				"regex":"^[a-zA-Z0-9_.]*$"
 			},
 			
