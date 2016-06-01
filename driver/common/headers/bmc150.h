@@ -92,7 +92,7 @@ typedef struct {
 	int x, y, z;
 } BMC150_mag_t;
 
-BMC150_error_t BMC150_init(BMC150_i2c_addr_select_t pos);
+BMC150_error_t BMC150_init();
 
 BMC150_error_t BMC150_read_accel(BMC150_accel_t *const accel);
 
