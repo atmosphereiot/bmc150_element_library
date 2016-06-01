@@ -24,7 +24,7 @@
 	},
 	
 	"elements": {
-		"xMagneticField": {
+		"MagneticFieldX": {
 			"label": "X Magnetic Field",
 			"language": {
 				"en": {
@@ -36,7 +36,7 @@
 			"icon": null,
 			"code": ""
 		},
-		"yMagneticField": {
+		"MagneticFieldY": {
 			"label": "Y Magnetic Field",
 			"language": {
 				"en": {
@@ -48,7 +48,7 @@
 			"icon": null,
 			"code": ""
 		},
-		"zMagneticField": {
+		"MagneticFieldZ": {
 			"label": "Z Magnetic Field",
 			"language": {
 				"en": {
@@ -60,7 +60,7 @@
 			"icon": null,
 			"code": ""
 		},		
-		"magneticField": {
+		"MagneticField": {
 			"label": "Magnetic Field",
 			"language": {
 				"en": {
@@ -72,7 +72,7 @@
 			"icon": null,
 			"code": ""
 		},
-		"xAccel": {
+		"AccelerationX": {
 			"label": "X Acceleration",
 			"language": {
 				"en": {
@@ -84,7 +84,7 @@
 			"icon": null,
 			"code": ""
 		},
-		"yAccel": {
+		"AccelerationY": {
 			"label": "Y Acceleration",
 			"language": {
 				"en": {
@@ -96,7 +96,7 @@
 			"icon": null,
 			"code": ""
 		},
-		"zAccel": {
+		"AccelerationZ": {
 			"label": "Z Acceleration",
 			"language": {
 				"en": {
@@ -108,7 +108,7 @@
 			"icon": null,
 			"code": ""
 		},
-		"acceleration": {
+		"Acceleration": {
 			"label": "Acceleration",
 			"language": {
 				"en": {

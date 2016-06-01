@@ -1,5 +1,5 @@
-	bmc150_mag_t mag = {0};
-	bmc150_read_mag(&mag);
+	BMC150_mag_t mag = {0};
+	BMC150_read_mag(&mag);
 	
 	char valueBuffer[32];
 	

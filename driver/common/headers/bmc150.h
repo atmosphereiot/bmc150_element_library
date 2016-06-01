@@ -31,12 +31,12 @@
 #define __BMC150_H__
 
 #include <stdint.h>
-#include "../../i2c.h"
+#include "../i2c/i2c.h"
 
 typedef enum {
 	BMC150_OK = (uint8_t) 0,
 	BMC150_ERROR = !BMC150_OK
-} bmc150_error_t;
+} BMC150_error_t;
 
 
 /**
@@ -45,7 +45,7 @@ typedef enum {
 typedef enum {
 	BMC150_SDO_LOW,
 	BMC150_SDO_HIGH,
-} bmc150_i2c_addr_select_t;
+} BMC150_i2c_addr_select_t;
 
 /**
  * Range of the accelerometer measures.
@@ -55,7 +55,7 @@ typedef enum {
 	BMC150_MODE_4G = 0x5,
 	BMC150_MODE_8G = 0x8,
 	BMC150_MODE_16G = 0xC,
-} bmc150_accel_mode_t;
+} BMC150_accel_mode_t;
 
 /**
  * Size of the data filter.
@@ -69,40 +69,40 @@ typedef enum {
 	BMC150_BANDWIDTH_2MS = 0xD,
 	BMC150_BANDWIDTH_1MS = 0xE,
 	BMC150_BANDWIDTH_500US = 0xF,
-} bmc150_bandwidth_t;
+} BMC150_bandwidth_t;
 
 typedef enum {
 	BMC150_MAG_POWER_SUSPEND = 0x0,
 	BMC150_MAG_POWER_ACTIVE = 0x1,
-} bmc150_mag_power_t;
+} BMC150_mag_power_t;
 
 typedef enum {
 	BMC150_MAG_PRESET_REGULAR,
 	BMC150_MAG_PRESET_LOW_POWER,
 	BMC150_MAG_PRESET_ENHANCED,
 	BMC150_MAG_PRESET_HIGH_ACCURACY,
-} bmc150_mag_preset_t;
+} BMC150_mag_preset_t;
 
 typedef struct {
 	int16_t x, y, z;
-} bmc150_accel_t;
+} BMC150_accel_t;
 
 typedef struct {
 	int x, y, z;
-} bmc150_mag_t;
+} BMC150_mag_t;
 
-bmc150_error_t bmc150_init(bmc150_i2c_addr_select_t pos);
+BMC150_error_t BMC150_init(BMC150_i2c_addr_select_t pos);
 
-bmc150_error_t bmc150_read_accel(bmc150_accel_t *const accel);
+BMC150_error_t BMC150_read_accel(BMC150_accel_t *const accel);
 
-bmc150_error_t bmc150_set_accel_mode(bmc150_accel_mode_t mode);
+BMC150_error_t BMC150_set_accel_mode(BMC150_accel_mode_t mode);
 
-bmc150_error_t bmc150_set_bandwidth(bmc150_bandwidth_t bw);
+BMC150_error_t BMC150_set_bandwidth(BMC150_bandwidth_t bw);
 
-bmc150_error_t bmc150_read_mag(bmc150_mag_t *const mag);
+BMC150_error_t BMC150_read_mag(BMC150_mag_t *const mag);
 
-bmc150_error_t bmc150_mag_set_power(bmc150_mag_power_t power);
+BMC150_error_t BMC150_mag_set_power(BMC150_mag_power_t power);
 
-bmc150_error_t bmc150_mag_set_preset(bmc150_mag_preset_t preset);
+BMC150_error_t BMC150_mag_set_preset(BMC150_mag_preset_t preset);
 
 #endif /* __BMC150_H__ */

@@ -99,7 +99,7 @@ static uint16_t magneto_addr = 0x12;
  * transmission starts, the start address will be set to the register address
  * specified in the latest I2C write command."
  */
-static bmc150_error_t read_register(uint16_t addr, uint8_t reg, uint8_t *const data,
+static BMC150_error_t read_register(uint16_t addr, uint8_t reg, uint8_t *const data,
 			     uint32_t len)
 {
 
@@ -109,7 +109,7 @@ static bmc150_error_t read_register(uint16_t addr, uint8_t reg, uint8_t *const d
 	return BMC150_OK;
 }
 
-static bmc150_error_t write_register(uint16_t addr, uint8_t reg, uint8_t data)
+static BMC150_error_t write_register(uint16_t addr, uint8_t reg, uint8_t data)
 {
 
 	AIR_I2C_Write(addr,&reg, 1);
@@ -118,9 +118,9 @@ static bmc150_error_t write_register(uint16_t addr, uint8_t reg, uint8_t data)
 	return BMC150_OK;
 }
 
-bmc150_error_t bmc150_read_accel(bmc150_accel_t *const accel)
+BMC150_error_t BMC150_read_accel(BMC150_accel_t *const accel)
 {
-	bmc150_error_t rc;
+	BMC150_error_t rc;
 	uint8_t raw_accel[6];
 
 	/* Reading the 6 registers at once. */
@@ -137,20 +137,20 @@ bmc150_error_t bmc150_read_accel(bmc150_accel_t *const accel)
 	return BMC150_OK;
 }
 
-bmc150_error_t bmc150_set_accel_mode(bmc150_accel_mode_t mode)
+BMC150_error_t BMC150_set_accel_mode(BMC150_accel_mode_t mode)
 {
 	return write_register(accel_addr, BMC150_REG_ACCEL_PMU_RANGE, mode);
 }
 
-bmc150_error_t bmc150_set_bandwidth(bmc150_bandwidth_t bw)
+BMC150_error_t BMC150_set_bandwidth(BMC150_bandwidth_t bw)
 {
 	return write_register(accel_addr, BMC150_REG_ACCEL_PMU_BW, bw);
 }
 
-static bmc150_error_t read_dig_comp(struct compensation *const comp)
+static BMC150_error_t read_dig_comp(struct compensation *const comp)
 {
 	uint8_t raw_comp[21];
-	bmc150_error_t rc;
+	BMC150_error_t rc;
 
 	rc = read_register(magneto_addr, BMC150_REG_MAG_DIG_X1, raw_comp,
 			   sizeof(raw_comp));
@@ -228,9 +228,9 @@ static int compensate_z(struct compensation *const comp, int rhall, int16_t raw)
 	return value;
 }
 
-bmc150_error_t bmc150_read_mag(bmc150_mag_t *const mag)
+BMC150_error_t BMC150_read_mag(BMC150_mag_t *const mag)
 {
-	bmc150_error_t rc = BMC150_OK;
+	BMC150_error_t rc = BMC150_OK;
 	uint8_t raw_mag[8];
 	int16_t x, y, z, rhall;
 
@@ -263,7 +263,7 @@ bmc150_error_t bmc150_read_mag(bmc150_mag_t *const mag)
 	return BMC150_OK;
 }
 
-bmc150_error_t bmc150_mag_set_power(bmc150_mag_power_t power)
+BMC150_error_t BMC150_mag_set_power(BMC150_mag_power_t power)
 {
 	return write_register(magneto_addr, BMC150_REG_MAG_POWER_MODES, power);
 }
@@ -289,9 +289,9 @@ static const uint8_t repetion_modes_z[] = {
     2, 14, 26, 82,
 };
 
-bmc150_error_t bmc150_mag_set_preset(bmc150_mag_preset_t preset)
+BMC150_error_t BMC150_mag_set_preset(BMC150_mag_preset_t preset)
 {
-	bmc150_error_t rc;
+	BMC150_error_t rc;
 
 	rc = write_register(magneto_addr, BMC150_REG_MAG_OPERATION_MODES,
 			    operation_modes[preset]);
@@ -314,7 +314,7 @@ bmc150_error_t bmc150_mag_set_preset(bmc150_mag_preset_t preset)
 	return BMC150_OK;
 }
 
-bmc150_error_t bmc150_init(bmc150_i2c_addr_select_t pos)
+BMC150_error_t BMC150_init(BMC150_i2c_addr_select_t pos)
 {
 	AIR_I2C_Init();
 
