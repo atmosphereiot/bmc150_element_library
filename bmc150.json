@@ -123,6 +123,45 @@
 	},
 	
 	"config":{
+		"file":"bmc150_config.h",
+		
+		"values":{
+			"i2c_address":{
+				"name":"I2C Address",
+				"input":"Combo",
+				"prefix":"#define AIR_BMC150_I2C_ADDRESS BMC150_SDO_",
+				"options": ["LOW", "HIGH"],
+				"value":"LOW",
+				"regex":"^[a-zA-Z0-9_.]*$"
+			},
+			
+			"mag_preset":{
+				"name":"Magnometer Preset",
+				"input":"Combo",
+				"prefix":"#define AIR_BMC150_MAG_PRESET BMC150_MAG_",
+				"options": ["POWER_ACTIVE", "PRESET_ENHANCED", "PRESET_LOW_POWER", "PRESET_REGULAR"],
+				"value":"BMC150_MAG_POWER_ACTIVE",
+				"regex":"^[a-zA-Z0-9_.]*$"
+			},
+			
+			"accel_mode":{
+				"name":"Accelerometer Mode",
+				"input":"Combo",
+				"prefix":"#define AIR_BMC150_ACCEL_MODE BMC150_MODE_",
+				"options": ["2G", "4G", "8G", "16G"],
+				"value":"2G",
+				"regex":"^[a-zA-Z0-9_.]*$"
+			},
+			
+			"bandwidth":{
+				"name":"Bandwidth",
+				"input":"Combo",
+				"prefix":"#define AIR_BMC150_BANDWIDTH BMC150_BANDWIDTH_",
+				"options": ["64MS", "32MS", "16MS", "8MS", "4MS", "2MS", "1MS", "500US"],
+				"value":"64MS",
+				"regex":"^[a-zA-Z0-9_.]*$"
+			}
+		}
 	},
 	
 	"categories":["Sensor", "Acceleration", "Magnometer", "New"],

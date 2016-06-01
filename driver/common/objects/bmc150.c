@@ -314,14 +314,21 @@ BMC150_error_t BMC150_mag_set_preset(BMC150_mag_preset_t preset)
 	return BMC150_OK;
 }
 
-BMC150_error_t BMC150_init(BMC150_i2c_addr_select_t pos)
+BMC150_error_t BMC150_init()
 {
-	AIR_I2C_Init();
-
+	BMC150_i2c_addr_select_t pos = BMC150_SDO_LOW;
+	
 	if (pos == BMC150_SDO_HIGH) {
 		accel_addr = 0x11;
 		magneto_addr = 0x13;
 	}
-
+	
+	//Setup Magnometer
+	BMC150_mag_set_power(BMC150_MAG_POWER_ACTIVE);
+	BMC150_mag_set_preset(AIR_BMC150_MAG_PRESET);
+	//Setup Accelerometer
+	BMC150_set_accel_mode(AIR_BMC150_ACCEL_MODE);
+	BMC150_set_bandwidth(AIR_BMC150_BANDWIDTH);
+	
 	return BMC150_OK;
 }

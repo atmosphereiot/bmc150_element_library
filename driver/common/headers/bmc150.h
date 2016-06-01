@@ -32,6 +32,7 @@
 
 #include <stdint.h>
 #include "../i2c/i2c.h"
+#include "bmc150_config.h"
 
 typedef enum {
 	BMC150_OK = (uint8_t) 0,
