@@ -316,7 +316,7 @@ BMC150_error_t BMC150_mag_set_preset(BMC150_mag_preset_t preset)
 
 BMC150_error_t BMC150_init()
 {
-	BMC150_i2c_addr_select_t pos = BMC150_SDO_LOW;
+	BMC150_i2c_addr_select_t pos = AIR_BMC150_I2C_ADDRESS;
 	
 	if (pos == BMC150_SDO_HIGH) {
 		accel_addr = 0x11;
