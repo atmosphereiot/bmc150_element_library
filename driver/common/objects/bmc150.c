@@ -102,19 +102,14 @@ static uint16_t magneto_addr = 0x12;
 static BMC150_error_t read_register(uint16_t addr, uint8_t reg, uint8_t *const data,
 			     uint32_t len)
 {
-
-	AIR_I2C_Write(addr,&reg,1);
-	AIR_I2C_Read(addr,data,len);
-
+	AIR_I2C_ComboRead(addr,&reg,1,data,len);
 	return BMC150_OK;
 }
 
 static BMC150_error_t write_register(uint16_t addr, uint8_t reg, uint8_t data)
 {
-
-	AIR_I2C_Write(addr,&reg, 1);
-	AIR_I2C_Write(addr,&data, 1);
-
+	uint8_t writeData[2] = {reg, data};
+	AIR_I2C_Write(addr,writeData,2);
 	return BMC150_OK;
 }
 
