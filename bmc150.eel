@@ -60,14 +60,14 @@
                 "input": "Combo",
                 "name": "Magnometer Preset",
                 "options": [
-                    "HIGH_ACCURACY",
+                    "PRESET_HIGH_ACCURACY",
                     "PRESET_ENHANCED",
                     "PRESET_LOW_POWER",
                     "PRESET_REGULAR"
                 ],
                 "prefix": "#define AIR_BMC150_MAG_PRESET BMC150_MAG_",
                 "regex": "^[a-zA-Z0-9_.]*$",
-                "value": "HIGH_ACCURACY"
+                "value": "PRESET_HIGH_ACCURACY"
             }
         }
     },
